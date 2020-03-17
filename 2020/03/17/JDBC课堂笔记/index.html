@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>blog步骤 | Mr woker&#39;s Blog</title>
+  <title>JDBC课堂笔记 | Mr woker&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、今天用hexo 框架搭建了一个自己的博客。">
+  <meta name="description" content="JDBC1. JDBC基本概念 2. 快速入门 3. 对JDBC中各个接口和类详解JDBC： 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱">
 <meta property="og:type" content="article">
-<meta property="og:title" content="blog步骤">
-<meta property="og:url" content="http://yoursite.com/2020/03/01/%E5%AE%89%E8%A3%85blog%E6%AD%A5%E9%AA%A4/index.html">
+<meta property="og:title" content="JDBC课堂笔记">
+<meta property="og:url" content="http://yoursite.com/2020/03/17/JDBC%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Mr woker&#39;s Blog">
-<meta property="og:description" content="一、今天用hexo 框架搭建了一个自己的博客。">
+<meta property="og:description" content="JDBC1. JDBC基本概念 2. 快速入门 3. 对JDBC中各个接口和类详解JDBC： 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-01T08:06:12.000Z">
-<meta property="article:modified_time" content="2020-03-02T01:35:08.034Z">
+<meta property="article:published_time" content="2020-03-17T07:19:09.234Z">
+<meta property="article:modified_time" content="2020-03-17T07:18:39.647Z">
 <meta property="article:author" content="Mr worker">
 <meta name="twitter:card" content="summary">
   
@@ -158,29 +158,426 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-安装blog步骤" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JDBC课堂笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      blog步骤
+      JDBC课堂笔记
     </h1>
   
 
         
-        <a href="/2020/03/01/%E5%AE%89%E8%A3%85blog%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
-  	<time datetime="2020-03-01T08:06:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+        <a href="/2020/03/17/JDBC%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-03-17T07:19:09.234Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 一、今天用hexo 框架搭建了一个自己的博客。<br>  <a id="more"></a><br>  主页： <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
-<p>  主页中有非常详细的介绍，主页中有介绍内容我这里就不赘述了，这里主要说说主页中没有详细说明内容。<br>hexo 可以理解为是基于node.js制作的一个博客工具，不是我们理解的一个开源的博客系统。其中的差别，有点意思。<br>hexo 正常来说，不需要部署到我们的服务器上，我们的服务器上保存的，其实是基于在hexo通过markdown编写的文章，然后hexo帮我们生成静态的html页面，然后，将生成的html上传到我们的服务器。简而言之：hexo是个静态页面生成、上传的工具</p>
-<p>  步骤：<br>       1.下载node.js<br>       2.下载git并配置好环境变量<br>       3.hexo init   文件夹名称  初始化<br>          hexo new  文件名称<br>          hexo server 在线预览<br>          hexo  deploy  GitHub 托管</p>
+        <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><pre><code>1. JDBC基本概念
+2. 快速入门
+3. 对JDBC中各个接口和类详解</code></pre><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><ol>
+<li><p>概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库</p>
+<ul>
+<li>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1341328661&auto=0&height=66"></iframe></li>
+</ul>
+</li>
+<li><p>快速入门：</p>
+<ul>
+<li><p>步骤：</p>
+<ol>
+<li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar<br> 1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下<br> 2.右键–&gt;Add As Library</li>
+<li>注册驱动</li>
+<li>获取数据库连接对象 Connection</li>
+<li>定义sql</li>
+<li>获取执行sql语句的对象 Statement</li>
+<li>执行sql，接受返回结果</li>
+<li>处理结果</li>
+<li>释放资源</li>
+</ol>
+</li>
+<li><p>代码实现：</p>
+<pre><code>//1. 导入驱动jar包</code></pre><p>  //2.注册驱动<br>  Class.forName(“com.mysql.jdbc.Driver”);<br>  //3.获取数据库连接对象<br>  Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/db3”, “root”, “root”);<br>  //4.定义sql语句<br>  String sql = “update account set balance = 500 where id = 1”;<br>  //5.获取执行sql的对象 Statement<br>  Statement stmt = conn.createStatement();<br>  //6.执行sql<br>  int count = stmt.executeUpdate(sql);<br>  //7.处理结果<br>  System.out.println(count);<br>  //8.释放资源<br>  stmt.close();<br>  conn.close();</p>
+</li>
+</ul>
+</li>
+<li><p>详解各个对象：</p>
+<ol>
+<li><p>DriverManager：驱动管理对象</p>
+<ul>
+<li><p>功能：</p>
+<ol>
+<li><p>注册驱动：告诉程序该使用哪一个数据库驱动jar<br> static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。<br> 写代码使用：  Class.forName(“com.mysql.jdbc.Driver”);<br> 通过查看源码发现：在com.mysql.jdbc.Driver类中存在静态代码块<br>  static {</p>
+<pre><code>    try {
+        java.sql.DriverManager.registerDriver(new Driver());
+    } catch (SQLException E) {
+        throw new RuntimeException(&quot;Can&apos;t register driver!&quot;);
+    }
+}</code></pre><p> 注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。</p>
+</li>
+<li><p>获取数据库连接：</p>
+<ul>
+<li>方法：static Connection getConnection(String url, String user, String password) </li>
+<li>参数：<ul>
+<li>url：指定连接的路径<ul>
+<li>语法：jdbc:mysql://ip地址(域名):端口号/数据库名称</li>
+<li>例子：jdbc:mysql://localhost:3306/db3</li>
+<li>细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称</li>
+</ul>
+</li>
+<li>user：用户名</li>
+<li>password：密码 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Connection：数据库连接对象</p>
+<ol>
+<li>功能：<ol>
+<li>获取执行sql 的对象<ul>
+<li>Statement createStatement()</li>
+<li>PreparedStatement prepareStatement(String sql)  </li>
+</ul>
+</li>
+<li>管理事务：<ul>
+<li>开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务</li>
+<li>提交事务：commit() </li>
+<li>回滚事务：rollback() </li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Statement：执行sql的对象</p>
+<ol>
+<li><p>执行sql</p>
+<ol>
+<li>boolean execute(String sql) ：可以执行任意的sql 了解 </li>
+<li>int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句<ul>
+<li>返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。</li>
+</ul>
+</li>
+<li>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</li>
+</ol>
+</li>
+<li><p>练习：</p>
+<ol>
+<li><p>account表 添加一条记录</p>
+</li>
+<li><p>account表 修改记录</p>
+</li>
+<li><p>account表 删除一条记录</p>
+<p>代码：<br> Statement stmt = null;<br> Connection conn = null;<br> try {</p>
+<pre><code>//1. 注册驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+//2. 定义sql
+String sql = &quot;insert into account values(null,&apos;王五&apos;,3000)&quot;;
+//3.获取Connection对象
+conn = DriverManager.getConnection(&quot;jdbc:mysql:///db3&quot;, &quot;root&quot;, &quot;root&quot;);
+//4.获取执行sql的对象 Statement
+stmt = conn.createStatement();
+//5.执行sql
+int count = stmt.executeUpdate(sql);//影响的行数
+//6.处理结果
+System.out.println(count);
+if(count &gt; 0){
+    System.out.println(&quot;添加成功！&quot;);
+}else{
+    System.out.println(&quot;添加失败！&quot;);
+}</code></pre></li>
+</ol>
+<p>​     } catch (ClassNotFoundException e) {<br>​         e.printStackTrace();<br>​     } catch (SQLException e) {<br>​         e.printStackTrace();<br>​     }finally {<br>​         //stmt.close();<br>​         //7. 释放资源<br>​         //避免空指针异常<br>​         if(stmt != null){<br>​             try {<br>​                 stmt.close();<br>​             } catch (SQLException e) {<br>​                 e.printStackTrace();<br>​             }<br>​         }</p>
+<p>​         if(conn != null){<br>​             try {<br>​                 conn.close();<br>​             } catch (SQLException e) {<br>​                 e.printStackTrace();<br>​             }<br>​         }<br>​     }</p>
+</li>
+</ol>
+</li>
+<li><p>ResultSet：结果集对象,封装查询结果</p>
+<ul>
+<li><p>boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true</p>
+</li>
+<li><p>getXxx(参数):获取数据</p>
+<ul>
+<li>Xxx：代表数据类型   如： int getInt() ,    String getString()</li>
+<li>参数：<ol>
+<li>int：代表列的编号,从1开始   如： getString(1)</li>
+<li>String：代表列名称。 如： getDouble(“balance”)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>注意：</p>
+<ul>
+<li><p>使用步骤：</p>
+<ol>
+<li><p>游标向下移动一行</p>
+</li>
+<li><p>判断是否有数据</p>
+</li>
+<li><p>获取数据</p>
+<p>//循环判断游标是否是最后一行末尾。<br>while(rs.next()){<br> //获取数据<br> //6.2 获取数据<br> int id = rs.getInt(1);<br> String name = rs.getString(“name”);<br> double balance = rs.getDouble(3);</p>
+</li>
+</ol>
+<p>​         System.out.println(id + “—“ + name + “—“ + balance);<br>​     }</p>
+</li>
+</ul>
+</li>
+<li><p>练习：</p>
+<ul>
+<li>定义一个方法，查询emp表的数据将其封装为对象，然后装载集合，返回。<ol>
+<li>定义Emp类</li>
+<li>定义方法 public List<Emp> findAll(){}</Emp></li>
+<li>实现方法 select * from emp;</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PreparedStatement：执行sql的对象</p>
+<ol>
+<li><p>SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题</p>
+<ol>
+<li>输入用户随便，输入密码：a’ or ‘a’ = ‘a</li>
+<li>sql：select * from user where username = ‘fhdsjkf’ and password = ‘a’ or ‘a’ = ‘a’ </li>
+</ol>
+</li>
+<li><p>解决sql注入问题：使用PreparedStatement对象来解决</p>
+</li>
+<li><p>预编译的SQL：参数使用?作为占位符</p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li>导入驱动jar包 mysql-connector-java-5.1.37-bin.jar</li>
+<li>注册驱动</li>
+<li>获取数据库连接对象 Connection</li>
+<li>定义sql<ul>
+<li>注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;</li>
+</ul>
+</li>
+<li>获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) </li>
+<li>给？赋值：<ul>
+<li>方法： setXxx(参数1,参数2)<ul>
+<li>参数1：？的位置编号 从1 开始</li>
+<li>参数2：？的值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行sql，接受返回结果，不需要传递sql语句</li>
+<li>处理结果</li>
+<li>释放资源</li>
+</ol>
+</li>
+<li><p>注意：后期都会使用PreparedStatement来完成增删改查的所有操作</p>
+<ol>
+<li>可以防止SQL注入</li>
+<li>效率更高</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="抽取JDBC工具类-：-JDBCUtils"><a href="#抽取JDBC工具类-：-JDBCUtils" class="headerlink" title="抽取JDBC工具类 ： JDBCUtils"></a>抽取JDBC工具类 ： JDBCUtils</h2><pre><code>* 目的：简化书写
+* 分析：
+    1. 注册驱动也抽取
+    2. 抽取一个方法获取连接对象
+        * 需求：不想传递参数（麻烦），还得保证工具类的通用性。
+        * 解决：配置文件
+            jdbc.properties
+                url=
+                user=
+                password=
+
+
+    3. 抽取一个方法释放资源
+
+* 代码实现：
+    public class JDBCUtils {
+    private static String url;
+    private static String user;
+    private static String password;
+    private static String driver;
+    /**
+     * 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块
+     */
+    static{
+        //读取资源文件，获取值。
+
+        try {
+            //1. 创建Properties集合类。
+            Properties pro = new Properties();
+
+            //获取src路径下的文件的方式---&gt;ClassLoader 类加载器
+            ClassLoader classLoader = JDBCUtils.class.getClassLoader();
+            URL res  = classLoader.getResource(&quot;jdbc.properties&quot;);
+            String path = res.getPath();
+            System.out.println(path);///D:/IdeaProjects/itcast/out/production/day04_jdbc/jdbc.properties
+            //2. 加载文件
+           // pro.load(new FileReader(&quot;D:\\IdeaProjects\\itcast\\day04_jdbc\\src\\jdbc.properties&quot;));
+            pro.load(new FileReader(path));
+
+            //3. 获取数据，赋值
+            url = pro.getProperty(&quot;url&quot;);
+            user = pro.getProperty(&quot;user&quot;);
+            password = pro.getProperty(&quot;password&quot;);
+            driver = pro.getProperty(&quot;driver&quot;);
+            //4. 注册驱动
+            Class.forName(driver);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }</code></pre><p>​<br>​        /**<br>​         * 获取连接<br>​         * @return 连接对象<br>​         */<br>​        public static Connection getConnection() throws SQLException {<br>​<br>            return DriverManager.getConnection(url, user, password);<br>        }</p>
+<pre><code>/**
+ * 释放资源
+ * @param stmt
+ * @param conn
+ */
+public static void close(Statement stmt,Connection conn){
+    if( stmt != null){
+        try {
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    if( conn != null){
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre><p>​<br>​        /**<br>​         * 释放资源<br>​         * @param stmt<br>​         * @param conn<br>​         */<br>​        public static void close(ResultSet rs,Statement stmt, Connection conn){<br>​            if( rs != null){<br>​                try {<br>​                    rs.close();<br>​                } catch (SQLException e) {<br>​                    e.printStackTrace();<br>​                }<br>​            }<br>​<br>            if( stmt != null){<br>                try {<br>                    stmt.close();<br>                } catch (SQLException e) {<br>                    e.printStackTrace();<br>                }<br>            }</p>
+<pre><code>        if( conn != null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}
+
+* 练习：
+    * 需求：
+        1. 通过键盘录入用户名和密码
+        2. 判断用户是否登录成功
+            * select * from user where username = &quot;&quot; and password = &quot;&quot;;
+            * 如果这个sql有查询结果，则成功，反之，则失败
+
+    * 步骤：
+        1. 创建数据库表 user
+            CREATE TABLE USER(
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                username VARCHAR(32),
+                PASSWORD VARCHAR(32)
+
+            );
+
+            INSERT INTO USER VALUES(NULL,&apos;zhangsan&apos;,&apos;123&apos;);
+            INSERT INTO USER VALUES(NULL,&apos;lisi&apos;,&apos;234&apos;);
+
+        2. 代码实现：
+            public class JDBCDemo9 {
+
+                public static void main(String[] args) {
+                    //1.键盘录入，接受用户名和密码
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println(&quot;请输入用户名：&quot;);
+                    String username = sc.nextLine();
+                    System.out.println(&quot;请输入密码：&quot;);
+                    String password = sc.nextLine();
+                    //2.调用方法
+                    boolean flag = new JDBCDemo9().login(username, password);
+                    //3.判断结果，输出不同语句
+                    if(flag){
+                        //登录成功
+                        System.out.println(&quot;登录成功！&quot;);
+                    }else{
+                        System.out.println(&quot;用户名或密码错误！&quot;);
+                    }</code></pre><p>​<br>​                    }</p>
+<p>​<br>​<br>​                    /<em>*<br>​                     * 登录方法<br>​                     */<br>​                    public boolean login(String username ,String password){<br>​                        if(username == null || password == null){<br>​                            return false;<br>​                        }<br>​                        //连接数据库判断是否登录成功<br>​                        Connection conn = null;<br>​                        Statement stmt =  null;<br>​                        ResultSet rs = null;<br>​                        //1.获取连接<br>​                        try {<br>​                            conn =  JDBCUtils.getConnection();<br>​                            //2.定义sql<br>​                            String sql = “select * from user where username = ‘“+username+”‘ and password = ‘“+password+”‘ “;<br>​                            //3.获取执行sql的对象<br>​                            stmt = conn.createStatement();<br>​                            //4.执行查询<br>​                            rs = stmt.executeQuery(sql);<br>​                            //5.判断<br>​                           /</em> if(rs.next()){//如果有下一行，则返回true<br>​                                return true;<br>​                            }else{<br>​                                return false;<br>​                            }*/<br>​                           return rs.next();//如果有下一行，则返回true<br>​<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }finally {<br>                            JDBCUtils.close(rs,stmt,conn);<br>                        }</p>
+<p>​<br>​                        return false;<br>​                    }<br>​                }</p>
+<h2 id="JDBC控制事务："><a href="#JDBC控制事务：" class="headerlink" title="JDBC控制事务："></a>JDBC控制事务：</h2><pre><code>1. 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。
+2. 操作：
+    1. 开启事务
+    2. 提交事务
+    3. 回滚事务
+3. 使用Connection对象来管理事务
+    * 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
+        * 在执行sql之前开启事务
+    * 提交事务：commit() 
+        * 当所有sql都执行完提交事务
+    * 回滚事务：rollback() 
+        * 在catch中回滚事务
+
+4. 代码：
+    public class JDBCDemo10 {
+
+        public static void main(String[] args) {
+            Connection conn = null;
+            PreparedStatement pstmt1 = null;
+            PreparedStatement pstmt2 = null;
+
+            try {
+                //1.获取连接
+                conn = JDBCUtils.getConnection();
+                //开启事务
+                conn.setAutoCommit(false);
+
+                //2.定义sql
+                //2.1 张三 - 500
+                String sql1 = &quot;update account set balance = balance - ? where id = ?&quot;;
+                //2.2 李四 + 500
+                String sql2 = &quot;update account set balance = balance + ? where id = ?&quot;;
+                //3.获取执行sql对象
+                pstmt1 = conn.prepareStatement(sql1);
+                pstmt2 = conn.prepareStatement(sql2);
+                //4. 设置参数
+                pstmt1.setDouble(1,500);
+                pstmt1.setInt(2,1);
+
+                pstmt2.setDouble(1,500);
+                pstmt2.setInt(2,2);
+                //5.执行sql
+                pstmt1.executeUpdate();
+                // 手动制造异常
+                int i = 3/0;
+
+                pstmt2.executeUpdate();
+                //提交事务
+                conn.commit();
+            } catch (Exception e) {
+                //事务回滚
+                try {
+                    if(conn != null) {
+                        conn.rollback();
+                    }
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+                e.printStackTrace();
+            }finally {
+                JDBCUtils.close(pstmt1,conn);
+                JDBCUtils.close(pstmt2,null);
+            }</code></pre><p>​<br>​            }<br>​<br>        }</p>
+<p>​            </p>
 
       
 
@@ -265,7 +662,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/01/%E5%AE%89%E8%A3%85blog%E6%AD%A5%E9%AA%A4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/17/JDBC%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,15 +676,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/17/JDBC%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/17/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0&JDBCTemplate%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JDBC课堂笔记
+          JDBC连接池&amp;JDBCTemplate课堂笔记
         
       </div>
     </a>
   
+  
+    <a href="/2020/03/01/%E5%AE%89%E8%A3%85blog%E6%AD%A5%E9%AA%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">blog步骤</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -312,7 +714,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JDBC"><span class="toc-number">1.</span> <span class="toc-text">JDBC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC："><span class="toc-number">1.1.</span> <span class="toc-text">JDBC：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="toc-number">1.2.</span> <span class="toc-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC控制事务："><span class="toc-number">1.3.</span> <span class="toc-text">JDBC控制事务：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
