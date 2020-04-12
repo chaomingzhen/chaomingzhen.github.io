@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/10/26/Spring%201/</loc>
+    
+    <lastmod>2020-04-12T07:20:25.341Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/17/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0&JDBCTemplate%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2020-03-17T07:31:28.760Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2020/03/17/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6---Mybatis/</loc>
     
     <lastmod>2020-03-17T07:27:07.865Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/17/Spring%201/</loc>
-    
-    <lastmod>2020-03-17T07:24:48.426Z</lastmod>
     
   </url>
   
